@@ -63,6 +63,7 @@ function genPlots(id) {
         Plotly.newPlot("bubble", data_bubble, layout_bubble); 
 
         // the gauge plot
+        var wfreq = data.metadata.map(d => d.wfreq)
         var trace_gauge = {
             domain: { x: [0, 1], y: [0, 1] },
             value: parseFloat(wfreq),
