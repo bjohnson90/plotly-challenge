@@ -18,8 +18,6 @@ function genPlots(id) {
             x: samplevalues,
             y: OTU_id,
             text: labels,
-            marker: {
-              color: 'rgb(142,124,195)'},
             type:"bar",
             orientation: "h",
         };
