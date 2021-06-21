@@ -13,8 +13,31 @@ function genPlots(id) {
   
         // console.log(`OTU IDS: ${OTU_id}`)
         // console.log(`samplevalues: ${samplevalues}`)
+        var labels = samples.otu_labels.slice(0, 10);
+        var trace = {
+            x: samplevalues,
+            y: OTU_id,
+            text: labels,
+            marker: {
+              color: 'rgb(142,124,195)'},
+            type:"bar",
+            orientation: "h",
+        };
   
+        var layout = {
+            title: "Top 10 OTU",
+            yaxis:{
+                tickmode:"linear",
+            },
+            margin: {
+                l: 100,
+                r: 100,
+                t: 100,
+                b: 30
+            }
+        };
   
+        Plotly.newPlot("bar", data, layout);
     })
 }
 
