@@ -23,6 +23,8 @@ function genPlots(id) {
             type:"bar",
             orientation: "h",
         };
+
+        var data = [trace];
   
         var layout = {
             title: "Top 10 OTU",
