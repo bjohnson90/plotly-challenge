@@ -54,7 +54,7 @@ function genPlots(id) {
         var layout_bubble = {
             xaxis:{title: "OTU ID"},
             height: 600,
-            width: 600
+            width: 800
         };
 
         var data_bubble = [trace_bubble];
