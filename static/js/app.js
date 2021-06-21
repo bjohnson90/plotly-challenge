@@ -25,9 +25,9 @@ function initialize_page() {
         data.names.forEach(function(name) {
             dropdown.append("option").text(name).property("value");
         });
+        getInfo(data.names[0])
     });
 
-    getInfo(data.names[0])
 }
 
 initialize_page();
