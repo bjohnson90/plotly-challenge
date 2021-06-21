@@ -10,4 +10,4 @@ function initialize_page() {
     });
 }
 
-init();
+initialize_page();
