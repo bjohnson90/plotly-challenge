@@ -22,7 +22,7 @@ function genPlots(id) {
             orientation: "h",
         };
 
-        var data = [trace];
+        var data_bar = [trace];
   
         var layout = {
             title: "Top 10 OTU",
@@ -37,7 +37,7 @@ function genPlots(id) {
             }
         };
   
-        Plotly.newPlot("bar", data, layout);
+        Plotly.newPlot("bar", data_bar, layout);
 
         var trace_bubble = {
             x: samples.otu_ids,
