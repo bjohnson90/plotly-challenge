@@ -11,8 +11,8 @@ function genPlots(id) {
         // get the otu id's to the desired form for the plot
         var OTU_id = OTU_top.map(d => "OTU " + d)
   
-        console.log(`OTU IDS: ${OTU_id}`)
-        console.log(`samplevalues: ${samplevalues}`)
+        // console.log(`OTU IDS: ${OTU_id}`)
+        // console.log(`samplevalues: ${samplevalues}`)
   
   
     })
@@ -22,7 +22,7 @@ function getInfo(id) {
     d3.json("data/samples.json").then((data)=> {
 
         var metadata = data.metadata;
-        console.log(metadata)
+        // console.log(metadata)
         // filter by id
         var result = metadata.filter(meta => meta.id.toString() === id)[0];
 
@@ -39,6 +39,7 @@ function getInfo(id) {
 } 
 
 function optionChanged(id) {
+    genPlots(id);
     getInfo(id);
 }
 
@@ -46,7 +47,7 @@ function initialize_page() {
     var dropdown = d3.select("#selDataset");
 
     d3.json("data/samples.json").then((data)=> {
-        console.log(data)
+        // console.log(data)
         data.names.forEach(function(name) {
             dropdown.append("option").text(name).property("value");
         });
