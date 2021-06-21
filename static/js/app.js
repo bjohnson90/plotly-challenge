@@ -16,7 +16,12 @@ function getInfo(id) {
                 demographicInfo.append("h5").text(key[0].toUpperCase() + ": " + key[1] + "\n");    
         });
     });
-}  
+} 
+
+function optionChanged(id) {
+    getInfo(id);
+}
+
 function initialize_page() {
     var dropdown = d3.select("#selDataset");
 
