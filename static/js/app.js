@@ -1,9 +1,9 @@
 function genPlots(id) {
     d3.json("data/samples.json").then((data)=> {
-        console.log(data)
+        // console.log(data)
         //get top 10
         var samples = data.samples.filter(s => s.id.toString() === id)[0];
-        console.log(samples);
+        // console.log(samples);
         var samplevalues = samples.sample_values.slice(0, 10).reverse();
   
         var OTU_top = (samples.otu_ids.slice(0, 10)).reverse();
@@ -38,6 +38,29 @@ function genPlots(id) {
         };
   
         Plotly.newPlot("bar", data, layout);
+
+        var trace_bubble = {
+            x: samples.otu_ids,
+            y: samples.sample_values,
+            mode: "markers",
+            marker: {
+                size: samples.sample_values,
+                color: samples.otu_ids
+            },
+            text: samples.otu_labels
+  
+        };
+  
+        var layout_bubble = {
+            xaxis:{title: "OTU ID"},
+            height: 600,
+            width: 600
+        };
+
+        var data_bubble = [trace_bubble];
+  
+        // try to render a bubble plot
+        Plotly.newPlot("bubble", data_bubble, layout_bubble); 
     })
 }
 
