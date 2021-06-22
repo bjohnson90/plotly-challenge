@@ -73,9 +73,9 @@ function genPlots(id) {
             mode: "gauge+number",
             gauge: { axis: { range: [null, 9] },
                         steps: [
-                        { range: [0, 2], color: "yellow" },
-                        { range: [2, 4], color: "cyan" },
-                        { range: [4, 6], color: "teal" },
+                        { range: [0, 2], color: "red" },
+                        { range: [2, 4], color: "orange" },
+                        { range: [4, 6], color: "yellow" },
                         { range: [6, 8], color: "lime" },
                         { range: [8, 9], color: "green" },
                     ]}
