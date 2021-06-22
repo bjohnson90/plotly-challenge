@@ -1,6 +1,6 @@
 function genPlots(id) {
     d3.json("data/samples.json").then((data)=> {
-        // console.log(data)
+        console.log(data)
         //get top 10
         var samples = data.samples.filter(s => s.id.toString() === id)[0];
         // console.log(samples);
